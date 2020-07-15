@@ -1,4 +1,4 @@
 module.exports = app => {
-    const { router, controller } = app;
-    router.get('/home.htm', controller.page.home.index);
+    require('./router/adminEntry')(app);
+    require('./router/customerEntry')(app);
 };

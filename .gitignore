@@ -1,7 +1,6 @@
 coverage/
 logs/
 .logs/
-.vscode/
 .idea/
 assembly/
 target/

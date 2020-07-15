@@ -1,0 +1,15 @@
+{% include "layout/layout.html" %}
+
+{% block body %}
+<div class="main" id='app'>{{ title }}</div>
+<ul>
+    {% for item in list %}
+        <div>
+            <span>{{ item.name }}</span>
+            <span>{{ item.value }}</span>
+        </div>
+    {% endfor %}
+
+</ul>
+
+{% endblock %}
