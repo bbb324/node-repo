@@ -1,0 +1,27 @@
+{
+  "name": "node-repo",
+  "version": "1.0.0",
+  "description": "node后端项目",
+  "main": "index.js",
+  "scripts": {
+    "dev": "egg-bin dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bbb324/node-repo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bbb324/node-repo/issues"
+  },
+  "homepage": "https://github.com/bbb324/node-repo#readme",
+  "dependencies": {
+    "egg": "^2.27.0",
+    "egg-view-nunjucks": "^2.2.0"
+  },
+  "devDependencies": {
+    "egg-bin": "^4.15.0"
+  }
+}
