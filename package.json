@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "egg-bin dev --port 6004",
     "debug": "egg-bin debug --port 6004",
+    "start": "egg-scripts start --daemon",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
