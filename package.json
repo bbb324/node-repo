@@ -4,7 +4,7 @@
   "description": "node后端项目",
   "main": "index.js",
   "scripts": {
-    "start": "egg-scripts start --daemon --port=6004",
+    "start": "egg-scripts start --daemon --env=prod --port=6004",
     "stop": "egg-scripts stop",
     "dev": "egg-bin dev --port 6004",
     "debug": "egg-bin debug --port 6004",
