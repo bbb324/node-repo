@@ -29,4 +29,14 @@ module.exports = {
             enable: true,
         }
     },
+
+    mysql: {
+        client: {
+            host: '39.99.229.74',
+            port: '3306',
+            user: 'root',
+            password: 'qpmdKE.qa7%cx',
+            database: 'mysql', 
+        }
+    }
 }
