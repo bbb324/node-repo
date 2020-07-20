@@ -3,8 +3,10 @@ const Controller = require('egg').Controller;
 class HomeController extends Controller {
     async index() {
         const { ctx } = this;
-       
-        await ctx.render('page/home.html')
+
+        const res = await await ctx.curl('https://api.github.com/repos/bbb324/bbb324.github.io/releases/latest',  { dataType: 'json' })
+        const version = res.status === 200 ? res.data.tag_name : '0.0.1';
+        await ctx.render('page/home.html', {version})
     }
     async admin() {
         const { ctx } = this;
