@@ -27,6 +27,7 @@ module.exports = {
         },
         csrf: {
             enable: true,
+            domainWhiteList: [ 'updateBrowserRepo.json' ],
         }
     },
 

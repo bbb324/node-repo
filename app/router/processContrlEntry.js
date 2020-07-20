@@ -1,5 +1,4 @@
 module.exports = app => {
     const { router, controller } = app;
-    router.post('/updateRepo.json', controller.api.processControl.updateRepo);
-   
+    router.post('/updateBrowserRepo.json', controller.api.processControl.updateBrowserRepo);   
 };
