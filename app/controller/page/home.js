@@ -3,9 +3,13 @@ const Controller = require('egg').Controller;
 class HomeController extends Controller {
     async index() {
         const { ctx } = this;
-
-        const res = await await ctx.curl('https://api.github.com/repos/bbb324/bbb324.github.io/releases/latest',  { dataType: 'json' })
-        const version = res.status === 200 ? res.data.tag_name : '0.0.1';
+        let version = '';
+        try {
+            const res = await await ctx.curl('https://api.github.com/repos/bbb324/bbb324.github.io/releases/latest',  { dataType: 'json' })
+            version = res.data.tag_name;
+        } catch(e) {
+            version = await ctx.service.articleService.fetch_latest_js_version();
+        }
         await ctx.render('page/home.html', {version})
     }
     async admin() {
