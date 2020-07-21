@@ -33,11 +33,11 @@ module.exports = {
 
     mysql: {
         client: {
-            host: '39.99.229.74',
+            host: '47.105.137.210',
             port: '3306',
             user: 'root',
             password: 'qpmdKE.qa7%cx',
-            database: 'mysql', 
+            database: 'mysql',
         }
     }
 }
