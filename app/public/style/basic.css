@@ -91,13 +91,15 @@ div {
   background-color: #007bff;
   color: #ffffff;
   height: 50px;
+  line-height: 50px;
+  padding-left: 28px;
 }
 .logo {
-  width: 50px;
-  height: 50px;
+  font-size: 28px;
+  color: #fafafa;
 }
 .left-banner {
-  width: 100px;
+  width: 200px;
   height: 100%;
   background-color: #202444;
   color: #ffffff;
