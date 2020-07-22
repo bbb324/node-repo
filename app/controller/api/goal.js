@@ -1,31 +1,39 @@
 const Controller = require('egg').Controller;
 class GoalController extends Controller {
     async playerRegister() {
-        const {ctx, app} = this;
+        const {ctx} = this;
         const name = ctx.request.body.name;
-        const res = await ctx.service.goalService.playerRegister(name);
+        const obj = {
+            name: name,
+            assist: 0,
+            goal: 0
+        }
+        const res = await ctx.service.goalService.playerRegister(obj);
         ctx.body = {
             code: 0,
             data: res
         }
     }
-
-    // 创建表结构
-    async createTable() {
-        const { ctx } = this;
-        const name = ctx.request.query.name;
-        const str = 'id int NOT NULL AUTO_INCREMENT, '+
-        'name varchar(255) NOT NULL, '+
-        'goal int, ' +
-        'assist int, ' +
-        'PRIMARY KEY (id)';
-        const res = await ctx.service.basicService.createTable(name, str);
+    async playerRemove() {
+        const {ctx} = this;
+        const name = ctx.request.body.name;
+        const obj = {
+            name
+        };
+        const res = await ctx.service.goalService.playerRemove(obj);
         ctx.body = {
             code: 0,
-            data: res    
+            data: res
         }
     }
-
+    async playerList() {
+        const {ctx} = this;
+        const res = await ctx.service.goalService.playerList();
+        ctx.body = {
+            code: 0,
+            data: res
+        }
+    }
 }
 
 module.exports = GoalController;
