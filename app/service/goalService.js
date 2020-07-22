@@ -16,11 +16,16 @@ class GoalService extends Service {
   }
   async playerRemove(obj) {
       const {app} = this;
-      return await app.mysql.delete(this.db, obj)
+      return await app.mysql.delete(this.db, obj);
   }
   async playerList() {
       const {app} = this;
       return await app.mysql.select(this.db);
+  }
+
+  async updatePlayer(obj) {
+      const {app} = this;
+      return await app.mysql.query(`update ${this.db} set goal=${obj.goal}, assist=${obj.assist} where name='${obj.name}';`);
   }
 }
 

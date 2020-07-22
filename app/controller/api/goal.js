@@ -9,9 +9,9 @@ class GoalController extends Controller {
             goal: 0
         }
         const res = await ctx.service.goalService.playerRegister(obj);
-        console.log(res);
+        
         ctx.body = {
-            code: 0,
+            code: typeof res !== 'string' ? 0 : 500,
             data: res
         }
     }
@@ -30,6 +30,16 @@ class GoalController extends Controller {
     async playerList() {
         const {ctx} = this;
         const res = await ctx.service.goalService.playerList();
+        ctx.body = {
+            code: 0,
+            data: res
+        }
+    }
+
+    async updatePlayer() {
+        const {ctx} = this;
+        const {name, goal, assist} = ctx.request.body;
+        const res = await ctx.service.goalService.updatePlayer({name, goal, assist});
         ctx.body = {
             code: 0,
             data: res
