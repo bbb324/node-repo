@@ -1,4 +1,5 @@
 const Controller = require('egg').Controller;
+const moment = require('moment');
 class GoalController extends Controller {
     async playerRegister() {
         const {ctx} = this;
@@ -6,7 +7,9 @@ class GoalController extends Controller {
         const obj = {
             name: name,
             assist: 0,
-            goal: 0
+            goal: 0,
+            create_date: moment().format('YYYY-MM-DD HH:mm:ss'),
+            update_date: moment().format('YYYY-MM-DD HH:mm:ss'),
         }
         const res = await ctx.service.goalService.playerRegister(obj);
         
@@ -39,7 +42,8 @@ class GoalController extends Controller {
     async updatePlayer() {
         const {ctx} = this;
         const {name, goal, assist} = ctx.request.body;
-        const res = await ctx.service.goalService.updatePlayer({name, goal, assist});
+        const update_date = moment().format('YYYY-MM-DD HH:mm:ss');
+        const res = await ctx.service.goalService.updatePlayer({name, goal, assist, update_date});
         ctx.body = {
             code: 0,
             data: res
