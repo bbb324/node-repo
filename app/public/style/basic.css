@@ -86,25 +86,3 @@ div {
   display: block;
   clear: both;
 }
-
-.header {
-  background-color: #007bff;
-  color: #ffffff;
-  height: 50px;
-  line-height: 50px;
-  padding-left: 28px;
-}
-.logo {
-  font-size: 28px;
-  color: #fafafa;
-}
-.left-banner {
-  width: 200px;
-  height: 100%;
-  background-color: #202444;
-  color: #ffffff;
-  float: left;
-}
-.main {
-  margin-left: 100px;
-}
