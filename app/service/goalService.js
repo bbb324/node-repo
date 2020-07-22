@@ -7,8 +7,12 @@ class GoalService extends Service {
     }
   async playerRegister(obj) {
       const {app} = this;
-      
-      return await app.mysql.insert(this.db, obj);
+      const res = await app.mysql.query(`select * from ${this.db} where name='${obj.name}';`)
+      if(res.length === 0) {
+        return await app.mysql.insert(this.db, obj);
+      } else {
+          return '已存在';
+      }
   }
   async playerRemove(obj) {
       const {app} = this;

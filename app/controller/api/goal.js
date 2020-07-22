@@ -9,6 +9,7 @@ class GoalController extends Controller {
             goal: 0
         }
         const res = await ctx.service.goalService.playerRegister(obj);
+        console.log(res);
         ctx.body = {
             code: 0,
             data: res
