@@ -32,7 +32,8 @@
     "egg-scripts": "^2.13.0",
     "egg-view-nunjucks": "^2.2.0",
     "moment": "^2.27.0",
-    "runscript": "1.5.0"
+    "runscript": "1.5.0",
+    "egg-passport-local": "^1.2.1"
   },
   "devDependencies": {
     "egg-bin": "^4.15.0",
