@@ -10,7 +10,7 @@ class HomeController extends Controller {
                 const res = await await ctx.curl('https://api.github.com/repos/bbb324/goalTable/releases/latest',  { dataType: 'json' })
                 version = res.data.tag_name;
             } catch(e) {
-                version = '0.0.4';
+                version = '0.0.5';
             }
             await ctx.render('page/yst.html', {version, isReadOnly: isReadonly})
         } else {
@@ -20,7 +20,13 @@ class HomeController extends Controller {
 
     async login() {
         const {ctx} = this;
-        await ctx.render('page/login.html');
+        try {
+            const res = await await ctx.curl('https://api.github.com/repos/bbb324/goalTable/releases/latest',  { dataType: 'json' })
+            version = res.data.tag_name;
+        } catch(e) {
+            version = '0.0.5';
+        }
+        await ctx.render('page/login.html', {version, isReadOnly: isReadonly})
     }
         
 }
