@@ -4,14 +4,25 @@ class HomeController extends Controller {
     async index() {
         const { ctx } = this;
         let version = '';
-        try {
-            const res = await await ctx.curl('https://api.github.com/repos/bbb324/goalTable/releases/latest',  { dataType: 'json' })
-            version = res.data.tag_name;
-        } catch(e) {
-            version = '0.0.1';
+        const isReadonly = ctx.request.query.isReadonly;
+        if(ctx.isAuthenticated() || isReadonly == 1) {
+            try {
+                const res = await await ctx.curl('https://api.github.com/repos/bbb324/goalTable/releases/latest',  { dataType: 'json' })
+                version = res.data.tag_name;
+            } catch(e) {
+                version = '0.0.4';
+            }
+            await ctx.render('page/yst.html', {version, isReadOnly: isReadonly})
+        } else {
+            await ctx.redirect('/login.htm');
         }
-        await ctx.render('page/yst.html', {version})
     }
+
+    async login() {
+        const {ctx} = this;
+        await ctx.render('page/login.html');
+    }
+        
 }
 
 module.exports = HomeController;

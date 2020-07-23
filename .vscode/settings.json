@@ -1,3 +1,4 @@
 {
-    "eggHelper.serverPort": 54250
+    "eggHelper.serverPort": 54250,
+    "editor.multiCursorModifier": "ctrlCmd",
 }

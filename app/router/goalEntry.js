@@ -1,7 +1,17 @@
 module.exports = app => {
     const { router, controller } = app;
+    router.post('/passport/login', app.passport.authenticate('local', { 
+        successRedirect: '/yst.htm',
+        failureRedirect: '/404.htm'
+    }));
+
+
+    router.get('/login.htm', controller.page.goal.login);
+
     router.get('/yst.htm', controller.page.goal.index);
     
+    router.get('/404.htm', controller.page.basic.notFound);
+
     // 球员列表
     router.get('/playerList.json', controller.api.goal.playerList);
     // 注册球员

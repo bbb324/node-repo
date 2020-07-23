@@ -1,44 +1,35 @@
-'use strict';
-class AppBootHook {
-  constructor(app) {
-    this.app = app;
-  }
+const LocalStrategy = require('passport-local').Strategy;
 
-  configWillLoad() {
-    // Ready to call configDidLoad,
-    // Config, plugin files are referred,
-    // this is the last chance to modify the config.
-  }
+module.exports = app => {
+  // 挂载 strategy
 
-  configDidLoad() {
-    // Config, plugin files have been loaded.
-  /*   const index = this.app.config.coreMiddleware.length;
 
-    this.app.config.coreMiddleware.splice(index, 0, 'auth');
-    console.log(this.app.config.coreMiddleware) */
-  }
+  app.passport.use(new LocalStrategy({
+    passReqToCallback: true,
+    usernameField:'username', // 这里是在登录页面“账户” input 需要设置成的name
+    passwordField:'password', // 这里是在登录页面“密码” input 需要设置成的name
+  }, (req, username, password, done) => {
+    // format user
+    const user = {
+      provider: 'local',
+      username,
+      password,
+    };
+    app.passport.doVerify(req, user, done);
 
-  async didLoad() {
-    // All files have loaded, start plugin here.
+  }));
 
-  }
-
-  async willReady() {
-    // All plugins have started, can do some thing before app ready
-  }
-
-  async didReady() {
-    // Worker is ready, can do some things
-    // don't need to block the app boot.
-  }
-
-  async serverDidReady() {
-    // Server is listening.
-  }
-
-  async beforeClose() {
-    // Do some thing before app close.
-  }
-}
-
-module.exports = AppBootHook;
+  // 处理用户信息
+  app.passport.verify(async (ctx, user) => {
+    if(user.username === 'a' && user.password === 'a') {
+      return user;
+    }
+    return false;
+  });
+  app.passport.serializeUser(async (ctx, user) => {
+    return user;
+  });
+  app.passport.deserializeUser(async (ctx, user) => {
+    return user;
+  });
+};

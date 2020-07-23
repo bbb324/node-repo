@@ -31,6 +31,11 @@ module.exports = {
         }
     },
 
+    passportLocal: {
+        username: 'a',
+        password: 'a'
+    },
+
     mysql: {
         client: {
             host: '47.105.137.210',
