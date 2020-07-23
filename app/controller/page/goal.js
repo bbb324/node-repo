@@ -20,6 +20,7 @@ class HomeController extends Controller {
 
     async login() {
         const {ctx} = this;
+        let version = '';
         try {
             const res = await await ctx.curl('https://api.github.com/repos/bbb324/goalTable/releases/latest',  { dataType: 'json' })
             version = res.data.tag_name;
