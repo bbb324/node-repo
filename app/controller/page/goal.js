@@ -27,7 +27,7 @@ class HomeController extends Controller {
         } catch(e) {
             version = '0.0.5';
         }
-        await ctx.render('page/login.html', {version, isReadOnly: isReadonly})
+        await ctx.render('page/login.html', {version})
     }
         
 }
