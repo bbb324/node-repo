@@ -2,8 +2,6 @@ const LocalStrategy = require('passport-local').Strategy;
 
 module.exports = app => {
   // 挂载 strategy
-
-
   app.passport.use(new LocalStrategy({
     passReqToCallback: true,
     usernameField:'username', // 这里是在登录页面“账户” input 需要设置成的name
@@ -34,4 +32,10 @@ module.exports = app => {
   app.passport.deserializeUser(async (ctx, user) => {
     return user;
   });
+
+    app.beforeStart(async () => {
+      // 打开可以启动定时任务
+      //await app.runSchedule('update_cache');
+    });
+
 };
