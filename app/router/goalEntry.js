@@ -1,6 +1,6 @@
 module.exports = app => {
     const { router, controller } = app;
-    router.post('/passport/login', app.passport.authenticate('local', { 
+    router.get('/passport/login', app.passport.authenticate('local', { 
         successRedirect: '/yst.htm',
         failureRedirect: '/404.htm'
     }));
