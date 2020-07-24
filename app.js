@@ -23,7 +23,7 @@ module.exports = app => {
   app.passport.verify(async (ctx, user) => {
     // 这里的账号密码匹配，可以通过 sql 进行查询匹配，
     // 也可以通过 app.config.passportLocal 的配置信息进行匹配
-    if(user.username === 'a' && user.password === 'a') {
+    if(user.username == '1' && user.password == '1') {
       return user;
     }
     return false;

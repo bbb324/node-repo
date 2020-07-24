@@ -32,8 +32,8 @@ module.exports = {
     },
 
     passportLocal: {
-        username: 'a',
-        password: 'a',
+        username: '1',
+        password: '1',
     },
 
     mysql: {
