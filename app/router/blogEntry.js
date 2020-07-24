@@ -1,4 +1,4 @@
 module.exports = app => {
     const { router, controller } = app;
-    router.get('/admin.htm', controller.page.home.admin);
+    router.get('/blog.htm', controller.page.blog.index);
  };
