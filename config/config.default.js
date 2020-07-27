@@ -44,5 +44,6 @@ module.exports = {
             password: 'qpmdKE.qa7%cx',
             database: 'mysql',
         }
-    }
+    },
+    middleware: [ 'notFoundHandler' ],
 }
