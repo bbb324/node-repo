@@ -26,20 +26,24 @@
   },
   "dependencies": {
     "@bbb324/egg-plugin": "^1.0.0",
+    "cheerio": "^1.0.0-rc.5",
     "egg": "^2.27.0",
     "egg-mysql": "^3.0.0",
     "egg-passport": "^2.1.1",
+    "egg-passport-local": "^1.2.1",
     "egg-scripts": "^2.13.0",
     "egg-view-nunjucks": "^2.2.0",
     "moment": "^2.27.0",
-    "runscript": "1.5.0",
-    "egg-passport-local": "^1.2.1",
+    "node-tesseract-ocr": "^2.0.0",
     "request": "^2.88.0",
-    "node-tesseract-ocr": "^2.0.0"
+    "runscript": "1.5.0",
+    "superagent": "^6.1.0"
   },
   "devDependencies": {
-    "egg-bin": "^4.15.0",
     "autod": "^3.1.0",
-    "autod-egg": "^1.1.0"
+    "autod-egg": "^1.1.0",
+    "egg-bin": "^4.15.0",
+    "eslint": "^7.20.0",
+    "eslint-plugin-node": "^11.1.0"
   }
 }
