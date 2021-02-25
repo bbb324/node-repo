@@ -32,7 +32,13 @@ class CrawlerService extends Service {
         } else {
             return '已存在';
         }
+    }
 
+    // 返回列表数据
+    async fetchLianjiaList() {
+        const { app } = this;
+        const res = await app.mysql.query(`select * from ${this.db};`);
+        return res;
     }
 }
 
