@@ -5,7 +5,7 @@ class HomeController extends Controller {
         const { ctx } = this;
         let version = '';
         try {
-            const res = await await ctx.curl('https://api.github.com/repos/bbb324/bbb324.github.io/releases/latest',  { dataType: 'json' });
+            const res = await ctx.curl('https://api.github.com/repos/bbb324/bbb324.github.io/releases/latest',  { dataType: 'json' });
             version = res.data.tag_name;
         } catch(e) {
             version = await ctx.service.articleService.fetch_latest_js_version();
