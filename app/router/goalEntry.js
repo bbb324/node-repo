@@ -22,4 +22,4 @@ module.exports = app => {
 
     // 更新球员数据
     router.post('/updatePlayer.json', controller.api.goal.updatePlayer);
- };
+};

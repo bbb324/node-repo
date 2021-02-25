@@ -4,4 +4,4 @@ module.exports = app => {
     router.get('/queryArticleList.json', controller.api.home.queryArticleList);
     router.post('/addArticle.json', controller.api.home.addArticle);
 
- };
+};

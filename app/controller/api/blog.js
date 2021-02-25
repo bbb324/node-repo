@@ -19,7 +19,7 @@ class HomeController extends Controller {
         let files;
         try {
             files = await readdir(this.folderPath);
-            for(let file of files) {
+            for(const file of files) {
                 if(/.*.md/g.test(file)) {
                     list.push(file);
                 }
@@ -27,12 +27,12 @@ class HomeController extends Controller {
             ctx.body = {
                 code: 0,
                 data: list
-            }
+            };
         } catch (err) {
             ctx.body = {
                 code: 0,
                 data: list
-            }
+            };
         }    
     }
 
@@ -44,7 +44,7 @@ class HomeController extends Controller {
         ctx.body = {
             code: 0,
             data: res
-        }
+        };
     }
 
 }

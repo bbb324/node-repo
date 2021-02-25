@@ -9,7 +9,9 @@
     "dev": "egg-bin dev --port 6004",
     "debug": "egg-bin debug --port 6004",
     "autod": "autod",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint --ext .js app",
+    "lint:fix": "npm run lint --fix"
   },
   "repository": {
     "type": "git",
@@ -34,6 +36,7 @@
     "egg-scripts": "^2.13.0",
     "egg-view-nunjucks": "^2.2.0",
     "moment": "^2.27.0",
+    "node-fetch": "^2.6.1",
     "node-tesseract-ocr": "^2.0.0",
     "request": "^2.88.0",
     "runscript": "1.5.0",
@@ -42,8 +45,11 @@
   "devDependencies": {
     "autod": "^3.1.0",
     "autod-egg": "^1.1.0",
+    "babel-eslint": "^10.1.0",
     "egg-bin": "^4.15.0",
     "eslint": "^7.20.0",
-    "eslint-plugin-node": "^11.1.0"
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.3.1"
   }
 }

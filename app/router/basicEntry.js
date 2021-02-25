@@ -4,4 +4,4 @@ module.exports = app => {
     router.get('/createTable.json', controller.api.basic.createTable);
     router.get('/dropTable.json', controller.api.basic.dropTable);
     
- };
+};
