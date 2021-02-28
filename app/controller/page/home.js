@@ -1,7 +1,7 @@
 const Controller = require('egg').Controller;
 
 class HomeController extends Controller {
-    async index() {
+    /* async index() {
         const { ctx } = this;
         let version = '';
         try {
@@ -11,7 +11,10 @@ class HomeController extends Controller {
             version = await ctx.service.articleService.fetch_latest_js_version();
         }
         await ctx.render('page/home.html', { version });
-    }
+    } */
+
+  
+
     async admin() {
         const { ctx } = this;
         const list = [
