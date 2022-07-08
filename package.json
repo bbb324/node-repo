@@ -35,7 +35,7 @@
     "egg-passport-local": "^1.2.1",
     "egg-scripts": "^2.13.0",
     "egg-view-nunjucks": "^2.2.0",
-    "moment": "^2.27.0",
+    "moment": "^2.29.4",
     "node-fetch": "^2.6.1",
     "node-tesseract-ocr": "^2.0.0",
     "request": "^2.88.0",
